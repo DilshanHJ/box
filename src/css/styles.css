@@ -1,0 +1,279 @@
+body{
+     background-color: rgb(20, 40, 80);
+     transform-style: preserve-3d;
+}
+
+#Main-Container{
+     margin-top: 100px;
+     transform-style: preserve-3d;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+}
+
+.Layers{
+     
+     transform-style: preserve-3d;
+     position: absolute;
+     
+
+
+}
+
+#Top-Layer{
+     z-index: 3;
+     transform:  rotateX(60deg) rotatez(60deg) ;
+     translate: 0px 100px;
+     animation: top-layer-anime 4s infinite;
+
+
+}
+
+#Mid-Layer{
+     z-index: 2;
+     transform: rotateX(60deg) rotatez(60deg);
+     translate: 0px 200px;
+     animation: mid-layer-anime 4s infinite;
+
+
+}
+
+#Bottom-Layer{
+     z-index: 1;
+     transform: rotateX(60deg) rotatez(60deg);
+     translate: 0px 300px;
+     animation: top-layer-anime 4s infinite;
+
+
+}
+.box-row{
+     transform-style: preserve-3d;
+     display:flex;
+
+}
+
+.box{
+     margin: 5px;
+     transform-style: preserve-3d;
+     width: 105px;
+     height: 105px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     animation: box-anime 4s infinite;
+     animation-timing-function: linear;
+}
+
+
+.face{
+     transform-style: preserve-3d;
+     position: absolute;
+     width: 100px;
+     height: 100px;
+     border: solid 1px rgb(0, 168, 204);
+     flex-shrink: initial;
+     background-color:rgba(39, 73, 109,0.5);
+
+}
+
+#top{    
+     transform-origin: center;
+     transform: translatez(100px);
+     animation: top-anime 4s infinite;
+     animation-timing-function: linear;
+}
+#bottom{
+     transform-origin: center;
+
+}
+#left{
+     transform-origin:right;
+     transform: translateX(-100px) rotatey(90deg);
+     animation: left-anime 4s infinite;
+     animation-timing-function: linear;
+}
+#right{
+     transform-origin:left;
+     transform: translatex(100px) rotatey(-90deg);
+     animation: right-anime 4s infinite;
+     animation-timing-function: linear;
+}
+#up{
+     transform-origin:bottom;
+     transform: translatey(-100px) rotatex(-90deg);
+     animation: up-anime 4s infinite;
+     animation-timing-function: linear;
+}
+#down{
+     transform-origin:top;
+     transform: translatey(100px) rotatex(90deg);
+     animation: down-anime 4s infinite;
+     animation-timing-function: linear;
+}
+
+@keyframes box-anime {
+     0%{
+          transform: rotatez(0deg) ;
+     }
+     100% {
+          transform: rotatez(180deg) ;
+     }
+     
+     
+}
+
+@keyframes top-anime {
+     0% {
+          transform: translatez(100px);
+     }
+     25% {
+          transform: translatez(0px);
+          background-color: rgba(39, 73, 109, 0);
+     }
+     75% {
+          transform: translatez(0px);
+          background-color: rgba(39, 73, 109, 0);
+     }
+     100% {
+          transform: translatez(100px);
+     }
+}
+
+@keyframes left-anime {
+     0% {
+          transform-origin: right;
+          transform: translateX(-100px) rotatey(90deg);
+          width: 100px;
+     }
+
+     25% {
+          transform-origin: right;
+          transform: translateX(-50px) rotatey(90deg);
+          width: 0px;
+          background-color: rgba(39, 73, 109, 0);
+          
+     }
+
+     75% {
+          transform-origin: right;
+          transform: translateX(-50px) rotatey(90deg);
+          width: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     100% {
+          transform-origin: right;
+          transform: translateX(-100px) rotatey(90deg);
+          width: 100px;
+     }
+}
+
+@keyframes right-anime {
+     0% {
+          transform-origin: right;
+          transform: translateX(0px) rotatey(90deg);
+          width: -100px;
+     }
+
+     25% {
+          transform-origin: right;
+          transform: translateX(50px) rotatey(90deg);
+          width: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     75% {
+          transform-origin: right;
+          transform: translateX(50px) rotatey(90deg);
+          width: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     100% {
+          transform-origin: right;
+          transform: translateX(0px) rotatey(90deg);
+          width: -100px;
+     }
+}
+
+@keyframes up-anime {
+     0% {
+          transform-origin: bottom;
+          transform: translatey(-100px) rotatex(-90deg);
+     }
+
+     25% {
+          transform-origin: bottom;
+          transform: translatey(-50px) rotatex(-90deg);
+          height: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     75% {
+          transform-origin: bottom;
+          transform: translatey(-50px) rotatex(-90deg);
+          height: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     100% {
+          transform-origin: bottom;
+          transform: translatey(-100px) rotatex(-90deg);
+     }
+}
+
+@keyframes down-anime {
+     0% {
+          transform-origin: top;
+          transform: translatey(100px) rotatex(90deg);
+     }
+
+     25% {
+          transform-origin: top;
+          transform: translatey(50px) rotatex(90deg);
+          height: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     75% {
+          transform-origin: top;
+          transform: translatey(50px) rotatex(90deg);
+          height: 0px;
+          background-color: rgba(39, 73, 109, 0);
+     }
+
+     100% {
+          transform-origin: top;
+          transform: translatey(100px) rotatex(90deg);
+     }
+}
+
+
+
+
+
+@keyframes top-layer-anime {
+     0% {
+          transform: rotateX(60deg) rotatez(60deg);
+     }
+
+     100% {
+          transform: rotateX(60deg) rotatez(240deg);
+     }
+
+
+}
+
+@keyframes mid-layer-anime {
+     0% {
+          transform: rotateX(60deg) rotatez(60deg);
+     }
+
+     100% {
+          transform: rotateX(60deg) rotatez(-120deg);
+     }
+
+
+}
+
